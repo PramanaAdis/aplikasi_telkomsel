@@ -1,3 +1,5 @@
+import 'package:aplikasi_telkomsel/screens/bottom_nav_bar.dart';
+import 'package:aplikasi_telkomsel/themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          bottomNavigationBarTheme:
+              BottomNavigationBarThemeData(selectedItemColor: redColor)),
+      title: 'Telkomsel App',
+      home: BottomNavBar(),
+    );
   }
 }
