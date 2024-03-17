@@ -107,6 +107,84 @@ class Home extends StatelessWidget {
       );
     }
 
+    Widget cardinfo() {
+      return Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 18, left: 16, right: 16),
+            height: 333,
+            decoration: BoxDecoration(
+                color: whiteColor, borderRadius: BorderRadius.circular(15)),
+            child: Column(
+              children: [
+                Expanded(
+                    child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: greyCarColor,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15))),
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 17, top: 27, bottom: 21),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Rp 0',
+                          style:
+                              extraBoldText26.copyWith(color: primaryTextColor),
+                        ),
+                        Text(
+                          'Active until 22 Sep 2021',
+                          style: mediumText12.copyWith(color: darkGreyColor),
+                        ),
+                        Spacer(),
+                        Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 19, vertical: 7),
+                              decoration: BoxDecoration(
+                                  color: redButtonColor,
+                                  borderRadius: BorderRadius.circular(16.5)),
+                              child: Center(
+                                child: Text(
+                                  'Buy Package',
+                                  style:
+                                      mediumText12.copyWith(color: whiteColor),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 19,
+                            ),
+                            Text(
+                              'Top Up',
+                              style: mediumText12.copyWith(color: blueColor),
+                            ),
+                            SizedBox(
+                              width: 19,
+                            ),
+                            Text(
+                              'Send Gift',
+                              style: mediumText12.copyWith(color: blueColor),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )),
+                Expanded(child: Container())
+              ],
+            ),
+          )
+        ],
+      );
+    }
+
     return Scaffold(
         body: Container(
       decoration: BoxDecoration(
@@ -116,9 +194,7 @@ class Home extends StatelessWidget {
               stops: [0.1, 0.6, 4],
               colors: [redColor, redColor, yellowColor])),
       child: ListView(
-        children: [
-          header(),
-        ],
+        children: [header(), cardinfo()],
       ),
     ));
   }
